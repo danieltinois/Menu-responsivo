@@ -1,0 +1,89 @@
+* {
+  font-family: "Chivo Mono", monospace;
+  margin: 0;
+  padding: 0;
+  font-size: 22px;
+}
+
+body ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.header {
+  box-sizing: border-box;
+  height: 70px;
+  padding: 2rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0019;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+}
+
+.menu a {
+  display: block;
+  padding: 0.5rem;
+}
+
+.btnMobile {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .btnMobile {
+    display: block;
+  }
+  .menu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    right: 0px;
+    background: #0019;
+    height: 0px;
+    transition: 0.6s;
+    z-index: 1000;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+  #nav.active .menu {
+    height: calc(100vh - 70px);
+    visibility: visible;
+    overflow-y: auto;
+  }
+  .menu a {
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .btnMobile {
+    display: flex;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: 0.5rem;
+  }
+}
